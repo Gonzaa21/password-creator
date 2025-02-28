@@ -7,27 +7,27 @@ import language as lang
 
 def PasswordGenerator():
     while True:
-        # Tipos de caracteres a usar
+        # Type of characters
         caracteres = str.ascii_letters + str.digits + str.punctuation
         try:
-            # Pedir la longitud de caracteres
+            # Length
             longitud = int(input(lang.Translate('length')))
             
-            # Validar que la cantidad de caracteres sea al menos 8
+            # Verify if the password is more than 8 char.
             if longitud < 8:
                 print(lang.Translate('length_error'))
                 continue
             
-            # Generar y aleatorizar los caracteres según la longitud
+            # Generate and randomize depending the length
             contraseña = rnd.choices(caracteres, k=longitud)
             rnd.shuffle(contraseña)
-            contraseña = ''.join(contraseña)  # Convertir a string
+            contraseña = ''.join(contraseña)  # Convert to str
             
             return contraseña
         except ValueError:
             print(lang.Translate('invalid_char'))
 
-# Llamada a las funciones
+# Call functions
 lang.Language()
 longitud = input(">> ")
 

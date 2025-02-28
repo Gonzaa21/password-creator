@@ -4,11 +4,11 @@ import language as lang
 def SavePassword(contraseña):
     while True:
         guardar = input(lang.Translate('prompt_save')).lower()
-        if guardar == 's' or 'y':
-            # Crear carpeta saves si no existe
+        if guardar in ('s','y'):
+            # Create folder if not exists
             os.makedirs('saves', exist_ok=True)
             
-            # Guardar la contraseña
+            # Save password
             with open('saves/passwords.txt', 'a', encoding='UTF-8') as passwords:
                 passwords.write(lang.Translate(f'password_txt', contraseña=contraseña))
             

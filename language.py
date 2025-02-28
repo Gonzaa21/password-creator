@@ -1,6 +1,3 @@
-#crear seleccion de idioma
-
-#Diccionario
 traducciones = {
     "es": {
         "length":"Ingrese la cantidad de caracteres de la contraseña: ",
